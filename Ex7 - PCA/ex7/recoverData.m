@@ -23,6 +23,16 @@ X_rec = zeros(size(Z, 1), size(U, 1));
 
 
 
+
+U_reduce = U(:, 1:K);
+
+for i=1:length(Z)
+	v = Z(i, :)';
+	for j=1:length(U_reduce)
+		X_rec(i,j) = v'*U_reduce(j, :)';
+	end
+end
+
 % =============================================================
 
 end
